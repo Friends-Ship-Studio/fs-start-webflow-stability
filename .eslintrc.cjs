@@ -14,6 +14,8 @@ module.exports = {
     'prettier',
   ],
   ignorePatterns: [
+    // DON'T ignore dotfiles by default
+    '!**/.*',
     // Load .gitignore and .prettierignore content as base ESLint ignore patterns
     ...fs
       .readFileSync(path.join(__dirname, '.gitignore'), 'utf8')
@@ -30,9 +32,9 @@ module.exports = {
       env: {
         node: true,
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: ['**/.*.cjs'],
       parserOptions: {
-        sourceType: 'script',
+        sourceType: 'commonjs',
       },
     },
   ],
