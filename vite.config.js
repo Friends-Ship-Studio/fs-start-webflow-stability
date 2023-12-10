@@ -9,4 +9,9 @@ export default defineConfig({
       formats: ['es'],
     },
   },
+  server: {
+    // Automatically open the sandbox page in the browser when the dev server starts.
+    // If you aren't using the sandbox page, or don't want this behavior, remove this setting:
+    open: '/sandbox.html',
+  },
 });
